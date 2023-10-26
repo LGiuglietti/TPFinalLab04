@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingModule } from './modulos/landing/landing.module';
 import { Error404Component } from './shared/error404/error404.component';
 import { LandingPageComponent } from './modulos/landing/landing-page/landing-page.component';
+import { MovieListComponent } from './shared/movie-list/movie-list.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,11 @@ const routes: Routes = [
     path: '', 
     redirectTo: 'landing',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'list',
+    component: MovieListComponent
+  },
 ];
 
 @NgModule({
