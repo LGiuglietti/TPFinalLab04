@@ -17,4 +17,7 @@ constructor(private router: Router){}
   public goToLogin(){
     this.router.navigate(["auth/login"]);
   }
+  public goToRegister(){
+    this.router.navigate(["auth/register"]);
+  }
 }

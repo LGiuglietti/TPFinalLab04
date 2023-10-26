@@ -1,1 +1,6 @@
-<p>register works!</p>
+<form (ngSubmit)="userRegister()">
+    <p>correo <input type="text" name="email" [(ngModel)]="user.email"></p>
+    <p>nombre de usuario <input type="text" name="userName" [(ngModel)]="user.userName"></p>
+    <p>contra <input type="text" name="password" [(ngModel)]="user.password"></p>
+    <button type="submit">registrarse</button>
+</form>
