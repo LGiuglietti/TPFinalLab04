@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'list',
     component: MovieListComponent
   },
+  {
+    path: '**',
+    component: Error404Component
+  },
 ];
 
 @NgModule({
