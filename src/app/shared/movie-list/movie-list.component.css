@@ -1,0 +1,17 @@
+.div-card{
+    width: 18rem;
+    
+    position: relative; 
+    min-height: 200px;
+    border-radius: 10px;
+    margin: 20px 20px;
+}
+
+.div-card:hover{
+    margin: 20px 20px;
+    scale: 1.1;
+    transition: all 1s;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
