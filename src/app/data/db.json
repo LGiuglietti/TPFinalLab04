@@ -34,6 +34,13 @@
       "password": "alex1234",
       "favourites": [],
       "id": 4
+    },
+    {
+      "userName": "Jose",
+      "email": "jose@jose.com",
+      "password": "jose1234",
+      "favourites": [],
+      "id": 5
     }
   ]
 }

@@ -1,0 +1,9 @@
+.error404{
+    display: inline-block;
+    background: black;
+    
+}
+
+.error404img{
+    width: 200px;
+}

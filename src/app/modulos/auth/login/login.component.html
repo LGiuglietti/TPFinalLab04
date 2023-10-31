@@ -1,6 +1,22 @@
-<form (ngSubmit)="userLogin()">
-<p>correo <input type="text" name="email" [(ngModel)]="user.email"></p>
-<p>contra <input type="text" name="password" [(ngModel)]="user.password"></p>
-<button type="submit">ingresar</button>
-</form>
-    
+<div class="d-flex align-items-center justify-content-center vh-80 m-5">
+    <div class="text-center row">
+        <form (ngSubmit)="userLogin()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">What is your e-mail?</label>
+                <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="email"
+                    name="email" [(ngModel)]="user.email" placeholder="Enter your e-mail here">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3 ">
+                <label for="exampleInputPassword1" class="form-label">Now write your password 👇</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" type="password" name="password"
+                    [(ngModel)]="user.password" placeholder="Enter your password here">
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>        
+    </div>
+    <div class=" col-md-6 m-5">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZ3N2pmdHkyczJ2MXFidTNsaTMzeTd1cHMwdGpuanQ5cHh0NzFycyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kd9BlRovbPOykLBMqX/giphy.gif"
+            alt="" class="img-fluid">
+    </div>
+</div>
