@@ -1,0 +1,22 @@
+.container{
+    max-width: 500px;
+}
+
+.form-control:hover{
+    letter-spacing: 4px;
+    transition: all 1s;
+}
+
+.btn{
+    margin: 0px 20px;
+    width: 100px;   
+}
+
+.btn:hover{
+    scale: 1.2;
+    transition: all 1s;
+}
+
+.mb-3{
+    margin-top: 20px;
+}

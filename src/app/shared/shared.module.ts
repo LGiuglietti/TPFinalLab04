@@ -12,6 +12,11 @@ import { MovieListComponent } from './movie-list/movie-list.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    NavBarComponent,
+    Error404Component,
+    MovieListComponent
   ]
 })
 export class SharedModule { }

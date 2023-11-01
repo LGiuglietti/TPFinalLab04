@@ -1,6 +1,27 @@
-<form (ngSubmit)="userRegister()">
-    <p>correo <input type="text" name="email" [(ngModel)]="user.email"></p>
-    <p>nombre de usuario <input type="text" name="userName" [(ngModel)]="user.userName"></p>
-    <p>contra <input type="text" name="password" [(ngModel)]="user.password"></p>
-    <button type="submit">registrarse</button>
-</form>
+<div class="d-flex align-items-center justify-content-center vh-80 m-5">
+    <div class="text-center row">
+        <form (ngSubmit)="userRegister()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">What is your name?</label>
+                <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="email"
+                    name="userName" [(ngModel)]="user.userName" placeholder="Enter your name here">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">What is your e-mail?</label>
+                <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="email"
+                    name="email" [(ngModel)]="user.email" placeholder="Enter your e-mail here">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3 ">
+                <label for="exampleInputPassword1" class="form-label">Now write your password 👇</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" type="password" name="password"
+                    [(ngModel)]="user.password" placeholder="Enter your password here">
+            </div>
+            <button type="submit" class="btn btn-primary"> Sign up </button>
+        </form>        
+    </div>
+    <div class=" col-md-6 m-5">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW9qbjdjcHE1NzBzdzlrem9oa3ViMWdvZHpmOXA1aHByOWQ2MmV4NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6afAyZFRgF1e0fc4HC/giphy.gif"
+            alt="" class="img-fluid">
+    </div>
+</div>

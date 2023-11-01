@@ -27,6 +27,20 @@
       "password": "132",
       "favourites": [],
       "id": 3
+    },
+    {
+      "userName": "alex echeverria",
+      "email": "aleex.naahuel@outlook.com",
+      "password": "alex1234",
+      "favourites": [],
+      "id": 4
+    },
+    {
+      "userName": "Jose",
+      "email": "jose@jose.com",
+      "password": "jose1234",
+      "favourites": [],
+      "id": 5
     }
   ]
 }
