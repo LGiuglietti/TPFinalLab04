@@ -40,3 +40,13 @@ export class Movie {
         this.url='';
     }
 }
+export class Favourite{
+    idUser: number;
+    idPeli: string;
+
+    constructor()
+    {
+        this.idPeli='';
+        this.idUser=0;
+    }
+}
