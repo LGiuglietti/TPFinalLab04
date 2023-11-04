@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private apiService: ApiService) { }
 
-  public async checkAuth(email:string, password: string): Promise<boolean>{
+  public async checkAuth(email:string, password: string): Promise<User[]>{
 
     let users: User[] = [];
 
@@ -24,6 +24,6 @@ export class AuthService {
       console.log(error);
     }
 
-    return users.length == 1;
+    return users;
   }
 }

@@ -3,12 +3,14 @@ export class User {
     email: string;
     password: string;
     favourites: Array<string>;
+    id: number;
 
     constructor() {
         this.userName = '';
         this.email = '';
         this.password = '';
         this.favourites = new Array;
+        this.id=0;
     }
 }
 

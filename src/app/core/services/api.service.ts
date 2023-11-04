@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
-import { User } from '../Models';
+import { Favourite, User } from '../Models';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +45,9 @@ export class ApiService {
         map(resp => true),
         catchError(error => of(false))
       );
+  }
+
+  public getFavourites(idUser: number): Observable<string[]> {
+    return this.http.get<string[]>(`${this.baseURL}/favourites?id=${idUser}`);
   }
 }

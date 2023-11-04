@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/main/main.module").then(m => m.MainModule)
   },
   {
+    path: 'favourite',
+    loadChildren: () => import("./modulos/favourites/favourites.module").then(m => m.FavouritesModule)
+  },
+  {
     path: '', 
     redirectTo: 'landing',
     pathMatch: 'full'

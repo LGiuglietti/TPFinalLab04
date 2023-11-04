@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/core/services/movies.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,7 +11,7 @@ export class MovieListComponent implements OnInit{
 
   movieList: Array<any> = [];
 
-  constructor(private movieService: MoviesService){}
+  constructor(private movieService: MoviesService, private userService: UserService){}
 
   ngOnInit(): void {
     this.movieService.getAll()
@@ -34,6 +35,7 @@ export class MovieListComponent implements OnInit{
       .catch(error => {
         console.log(error);        
       })
+      
   }
   
 }

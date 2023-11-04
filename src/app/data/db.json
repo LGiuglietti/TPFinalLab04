@@ -4,7 +4,7 @@
       "id": 0,
       "userName": "admin",
       "email": "admin@gmail.com",
-      "password": "admin123",
+      "password": "a",
       "favourites": []
     },
     {
@@ -41,6 +41,13 @@
       "password": "jose1234",
       "favourites": [],
       "id": 5
+    },
+    {
+      "userName": "noe",
+      "email": "noe@gmail.com",
+      "password": "noe",
+      "favourites": [],
+      "id": 6
     }
   ]
 }
