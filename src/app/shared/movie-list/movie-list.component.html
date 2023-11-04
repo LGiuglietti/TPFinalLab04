@@ -1,6 +1,5 @@
 <div class="container bg-primary">
     <div class="row p-2 bg-dark bg-opacity-50 m-auto">
-        <img class="swipe-up" src="https://media.giphy.com/media/lrmnInn4OSnpHeFrU7/giphy.gif">
         <div class=" bg-light div-card" *ngFor="let movie of movieList">
             <img class="card-img-top p-2" src="{{ movie.image }}" alt="Card image cap">
             <div class="card-body">
@@ -14,6 +13,7 @@
                     Add to favorite
                 </button>
             </div>
+
         </div>
     </div>
 </div>
