@@ -10,7 +10,7 @@
                 <small class="text-muted">Directed by {{ movie.director }} </small>
             </div>
             <div class="card-footer m-4 p-2">
-                <button class="btn btn-primary" style="position: absolute; bottom: 0; margin: 5px 0px;">
+                <button class="btn btn-primary" style="position: absolute; bottom: 0; margin: 5px 0px;" (click)="onClick(movie.id)">
                     Add to favorite
                 </button>
             </div>

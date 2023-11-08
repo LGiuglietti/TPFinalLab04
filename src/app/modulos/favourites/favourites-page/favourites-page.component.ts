@@ -19,31 +19,27 @@ export class FavouritesPageComponent implements OnInit {
   public user: User = new User()
   ngOnInit(): void {
      this.user= this.userService.getSessionUser();
-    console.log(this.user)
     this.getFavourites()
   }
   async getFavourites() {
     const res = this.apiService.getFavourites(this.user.id);
-    //console.log(res);
     res.subscribe(
       data => {
-      //  console.log(data)
+        console.log(data);
         this.auxIdList = data;
         this.getMoviesFromAux();
-        console.log(this.auxIdList)
       })
-     
-    
   }
 
   async getMoviesFromAux() {
     for (let i = 0; i < this.auxIdList.length; i++) {
       const idMovie = this.auxIdList[i]
-      console.log(idMovie);
+      console.log(idMovie)
       const res = await this.movieService.getById(idMovie); //busco por id
       this.movieList.push(res);
 
     }
   }
+
 
 }
