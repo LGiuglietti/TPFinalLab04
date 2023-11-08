@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/app/core/Models';
 import { MoviesService } from 'src/app/core/services/movies.service';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -8,34 +9,8 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit{
-
-  movieList: Array<any> = [];
-
-  constructor(private movieService: MoviesService, private userService: UserService){}
-
   ngOnInit(): void {
-    this.movieService.getAll()
-      .then(response => {
-        
-        console.log(response);
-
-        /*
-        this.movieList =  response.map(movie !: any => {
-          id: movie.id
-
-        })
-        */
-        this.movieList = response;
-        //console.log(this.movieList);
-        
-        
-        
-        
-      })
-      .catch(error => {
-        console.log(error);        
-      })
-      
   }
-  
+  @Input() movieList: Movie[]=[];
 }
+  

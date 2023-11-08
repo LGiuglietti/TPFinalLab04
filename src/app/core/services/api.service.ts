@@ -36,11 +36,11 @@ export class ApiService {
     );
   }
   public setFavourite(idUser: number, idPeli: string): Observable<boolean> {
-    return this.http.post<boolean>(`${this.baseURL}/favouritesXuser?id=${idUser}/favourites/`, idPeli);
+    return this.http.post<boolean>(`${this.baseURL}/favourites?id=${idUser}/movies/`, idPeli);
   }
 
   public deleteFavourite(idUser: number, idPeli: string): Observable<boolean> {
-    return this.http.delete(`${this.baseURL}/favouritesXuser?id=${idUser}/favourites/${idPeli}`)
+    return this.http.delete(`${this.baseURL}/favourites?id=${idUser}/movies/${idPeli}`)
       .pipe(
         map(resp => true),
         catchError(error => of(false))
@@ -48,6 +48,14 @@ export class ApiService {
   }
 
   public getFavourites(idUser: number): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseURL}/favourites?id=${idUser}`);
+    return this.http.get<any>(`${this.baseURL}/favourites?idUser=${idUser}`).pipe(
+      map((response: any) => {
+        if (response && response.length > 0 && response[0].movies) {
+          return response[0].movies.map((item: any) => item.idMovie);
+        } else {
+          return [];
+        }
+      })
+    );
   }
 }

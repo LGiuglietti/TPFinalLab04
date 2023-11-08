@@ -4,50 +4,53 @@
       "id": 0,
       "userName": "admin",
       "email": "admin@gmail.com",
-      "password": "a",
-      "favourites": []
+      "password": "a"
     },
     {
       "id": 1,
       "userName": "pepito",
       "email": "pepito@gmail.com",
-      "password": "pepito123",
-      "favourites": []
+      "password": "pepito123"
     },
     {
       "id": 2,
       "userName": "userTestLunes",
       "email": "userTest@gmail.com",
-      "password": "userTest12345",
-      "favourites": []
+      "password": "userTest12345"
     },
     {
       "userName": "asd",
       "email": "lauchax129@gmail.com",
       "password": "132",
-      "favourites": [],
       "id": 3
     },
     {
       "userName": "alex echeverria",
       "email": "aleex.naahuel@outlook.com",
       "password": "alex1234",
-      "favourites": [],
       "id": 4
     },
     {
       "userName": "Jose",
       "email": "jose@jose.com",
       "password": "jose1234",
-      "favourites": [],
       "id": 5
     },
     {
       "userName": "noe",
       "email": "noe@gmail.com",
       "password": "noe",
-      "favourites": [],
       "id": 6
+    }
+  ],
+  "favourites": [
+    {
+      "idUser": 0,
+      "movies": [
+        {
+          "idMovie": "2baf70d1-42bb-4437-b551-e5fed5a87abe"
+        }
+      ]
     }
   ]
 }

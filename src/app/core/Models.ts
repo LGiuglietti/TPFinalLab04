@@ -2,14 +2,12 @@ export class User {
     userName: string;
     email: string;
     password: string;
-    favourites: Array<string>;
     id: number;
 
     constructor() {
         this.userName = '';
         this.email = '';
         this.password = '';
-        this.favourites = new Array;
         this.id=0;
     }
 }
@@ -20,6 +18,7 @@ export class Movie {
     original_title: string;
     original_title_romanised: string;
     description: string;
+    image: string;
     director: string;
     producer: string;
     release_date: number;
@@ -32,6 +31,8 @@ export class Movie {
         this.description='';
         this.director='';
         this.id='';
+
+        this.image='';
         this.original_title='';
         this.original_title_romanised='';
         this.producer='';

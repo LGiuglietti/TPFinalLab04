@@ -17,6 +17,7 @@ export class UserService {
 
  public getSessionUser(): User
   {
+    console.log(this.user)
     return this.user;
   }
 }
