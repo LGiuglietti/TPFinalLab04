@@ -12,12 +12,15 @@ export class MoviesService {
   private ghibliAPI = "https://ghibliapi.vercel.app/films"
 
   constructor(private http: HttpClient) { }
-
   
   getAll():Promise<any>{
     return this.http.get(this.ghibliAPI).toPromise();
   }
   
+
+  getAllObservable(){
+    return this.http.get(this.ghibliAPI);
+  }
 
   getAllObservable(){
     return this.http.get(this.ghibliAPI);

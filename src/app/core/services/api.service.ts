@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, switchMap } from 'rxjs';
-import { User } from '../Models';
+import { Observable, catchError, map, mergeMap, of, switchMap } from 'rxjs';
+import { Favourite, Movie, User } from '../Models';
 
 @Injectable({
   providedIn: 'root'
@@ -17,22 +17,60 @@ export class ApiService {
   }
 
   checkEmailExists(user: User): Observable<boolean> {
-    return this.http.get<any[]>(`${this.baseURL}/users?email=${user.email}`).pipe(
+    return this.http.get<User[]>(`${this.baseURL}/users?email=${user.email}`).pipe(
       map((users) => {
         return users.length > 0;
       })
     );
   }
-  public setUser(user: User): Observable<any> {
+  public setUser(user: User): Observable<boolean> {
     return this.checkEmailExists(user).pipe(
       switchMap((res) => {
         if (res) {
           throw new Error('Email ya registrado');
         }
         else {
-          return this.http.post(`${this.baseURL}/users/`, user);
+          return this.http.post<boolean>(`${this.baseURL}/users/`, user);
         }
       })
     );
+  }
+ public setFavourite(idUser: number, idPeli: string): Observable<any> {
+  const url = `${this.baseURL}/favourites/${idUser}/`;
+  return this.getFavourites(idUser).pipe(
+    mergeMap((movies) => {
+      if (movies && movies.includes(idPeli)) {
+        return of(false); // Movie already in favorites
+      } else {
+        const updatedMovies = movies ? [...movies, idPeli] : [idPeli];
+        const body = {
+          idUser: idUser,
+          movies: updatedMovies,
+        };
+        return this.http.put<boolean>(url, body);
+      }
+    })
+  );
 }
+
+public getFavourites(idUser: number): Observable<string[]> {
+  return this.http.get<any>(`${this.baseURL}/favourites?idUser=${idUser}`).pipe(
+    map((response: any) => {
+      if (response && response.length > 0) {
+        const user = response.find((item: any) => item.idUser === idUser);
+        if (user && user.movies) {
+          return user.movies;
+        }
+      }
+      return [];
+    })
+  );
+}
+  public deleteFavourite(idUser: number, idPeli: string): Observable<boolean> {
+    return this.http.delete(`${this.baseURL}/favourites?id=${idUser}&${idPeli}`)
+      .pipe(
+        map(resp => true),
+        catchError(error => of(false))
+      );
+  }
 }

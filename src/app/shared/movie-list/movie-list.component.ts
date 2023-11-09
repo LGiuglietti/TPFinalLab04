@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/Models/movie';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Movie } from 'src/app/core/Models';
 import { MoviesService } from 'src/app/core/services/movies.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -32,5 +34,11 @@ export class MovieListComponent implements OnInit{
       complete() {console.log("the movies are ready")}
     })
   }
+  @Input() movieList: Movie[]=[];
+  @Output() addDelete= new EventEmitter<string>()
 
+  onClick(id: string){
+    this.addDelete.emit(id);
+  }
 }
+  
