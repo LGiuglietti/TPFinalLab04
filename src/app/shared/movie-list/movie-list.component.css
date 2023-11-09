@@ -1,11 +1,8 @@
-.swipe-up{
-    height: 120px;
-}
 .div-card{
     width: 18rem;
     
     position: relative; 
-    min-height: 200px;
+    height: 535px;
     border-radius: 10px;
     margin: 20px 15px;
 }
@@ -18,3 +15,10 @@
     cursor: pointer;
 }
 
+.card-title{
+    font-size: 20px;
+}
+
+.card-text{
+    margin: 3px 3px;
+}

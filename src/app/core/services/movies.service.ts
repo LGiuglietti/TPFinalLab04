@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,11 @@ export class MoviesService {
   
   getAll():Promise<any>{
     return this.http.get(this.ghibliAPI).toPromise();
+  }
+  
+
+  getAllObservable(){
+    return this.http.get(this.ghibliAPI);
   }
 
   getAllObservable(){
