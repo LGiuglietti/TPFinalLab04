@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, map, of, switchMap } from 'rxjs';
+import { Observable, catchError, map, mergeMap, of, switchMap } from 'rxjs';
 import { Favourite, Movie, User } from '../Models';
 
 @Injectable({
@@ -35,28 +35,21 @@ export class ApiService {
       })
     );
   }
-  public setFavourite(idUser: number, idPeli: string): Observable<any> {//no queda otra que usar any
+  public setFavourite(idUser: number, idPeli: string): Observable<any> {
     const url = `${this.baseURL}/favourites?idUser=${idUser}`;
-    return this.http.get<any>(url).pipe(
-      map((response) => {
-        console.log("funca")
-        if (response.length > 0 && response[0].movies.includes(idPeli)) {
-          console.log("funca")
-          return alert("pelicula ya en favoritos")
+    return this.getFavourites(idUser).pipe(
+      mergeMap((movies) => {
+        if (movies && movies.includes(idPeli)) {
+          return of(false); // Movie already in favorites
         } else {
-          console.log(this.http.post<boolean>(url, idPeli))
-          return this.http.post<boolean>(url, idPeli);
+          const updatedMovies = movies ? [...movies, idPeli] : [idPeli];
+          const body = {
+            movies: updatedMovies
+          };
+          return this.http.patch<any>(url, body);
         }
       })
     );
-  }
-
-  public deleteFavourite(idUser: number, idPeli: string): Observable<boolean> {
-    return this.http.delete(`${this.baseURL}/favourites?id=${idUser}&${idPeli}`)
-      .pipe(
-        map(resp => true),
-        catchError(error => of(false))
-      );
   }
 
   public getFavourites(idUser: number): Observable<string[]> {
@@ -67,5 +60,12 @@ export class ApiService {
         }
       })
     );
+  }
+  public deleteFavourite(idUser: number, idPeli: string): Observable<boolean> {
+    return this.http.delete(`${this.baseURL}/favourites?id=${idUser}&${idPeli}`)
+      .pipe(
+        map(resp => true),
+        catchError(error => of(false))
+      );
   }
 }

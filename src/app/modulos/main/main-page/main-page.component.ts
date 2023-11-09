@@ -9,28 +9,37 @@ import { UserService } from 'src/app/core/services/user.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit{
-  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService){}
+export class MainPageComponent implements OnInit {
+  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService) { }
 
-  public movieList: Array<Movie>=[];
+  public movieList: Array<Movie> = [];
   public user: User = new User();
   ngOnInit(): void {
-    this.user=this.userService.getSessionUser();  
+    this.user = this.userService.getSessionUser();
     console.log(this.user);
     this.movieService.getAllObservable().subscribe({
       next: (response) => this.movieList = response as Movie[],
-      error(error){console.log(error)},
-      complete() {console.log("the movies are ready")}
+      error(error) { console.log(error) },
+      complete() { console.log("the movies are ready") }
     })
   }
-  addFavourite(idPeli: string){
-    this.apiService.setFavourite(this.user.id,idPeli).subscribe({
-      next:()=>alert("pelicula agregada")
-      
-    });
+  addFavourite(idPeli: string) {
+    this.apiService.setFavourite(this.user.id, idPeli).subscribe({
+      next: (response) => {
+        if (response) {
+          alert("Pelicula agregada");
+        } else {
+          alert("Error al agregar la pelicula");
+        }
+      },
+      error: (error) => {
+        console.error("Error al procesar la solicitud: ", error);
+        alert("Error al procesar la solicitud");
+      }
+    })
   }
 
-  
+
 
 
 }
