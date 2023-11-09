@@ -29,7 +29,7 @@ export class MainPageComponent implements OnInit {
         if (response) {
           alert("Pelicula agregada");
         } else {
-          alert("Error al agregar la pelicula");
+          alert("Pelicula ya en favoritos");
         }
       },
       error: (error) => {

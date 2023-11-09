@@ -35,32 +35,37 @@ export class ApiService {
       })
     );
   }
-  public setFavourite(idUser: number, idPeli: string): Observable<any> {
-    const url = `${this.baseURL}/favourites?idUser=${idUser}`;
-    return this.getFavourites(idUser).pipe(
-      mergeMap((movies) => {
-        if (movies && movies.includes(idPeli)) {
-          return of(false); // Movie already in favorites
-        } else {
-          const updatedMovies = movies ? [...movies, idPeli] : [idPeli];
-          const body = {
-            movies: updatedMovies
-          };
-          return this.http.patch<any>(url, body);
-        }
-      })
-    );
-  }
+ public setFavourite(idUser: number, idPeli: string): Observable<any> {
+  const url = `${this.baseURL}/favourites/${idUser}/`;
+  return this.getFavourites(idUser).pipe(
+    mergeMap((movies) => {
+      if (movies && movies.includes(idPeli)) {
+        return of(false); // Movie already in favorites
+      } else {
+        const updatedMovies = movies ? [...movies, idPeli] : [idPeli];
+        const body = {
+          idUser: idUser,
+          movies: updatedMovies,
+        };
+        return this.http.put<boolean>(url, body);
+      }
+    })
+  );
+}
 
-  public getFavourites(idUser: number): Observable<string[]> {
-    return this.http.get<any>(`${this.baseURL}/favourites?idUser=${idUser}`).pipe(
-      map((response: any) => {
-        if (response.length > 0 && response[0].movies) { //si existe el usuario y tiene peliculas
-          return response[0].movies;
+public getFavourites(idUser: number): Observable<string[]> {
+  return this.http.get<any>(`${this.baseURL}/favourites?idUser=${idUser}`).pipe(
+    map((response: any) => {
+      if (response && response.length > 0) {
+        const user = response.find((item: any) => item.idUser === idUser);
+        if (user && user.movies) {
+          return user.movies;
         }
-      })
-    );
-  }
+      }
+      return [];
+    })
+  );
+}
   public deleteFavourite(idUser: number, idPeli: string): Observable<boolean> {
     return this.http.delete(`${this.baseURL}/favourites?id=${idUser}&${idPeli}`)
       .pipe(
