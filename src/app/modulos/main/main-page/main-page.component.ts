@@ -14,6 +14,7 @@ export class MainPageComponent implements OnInit {
 
   public movieList: Array<Movie> = [];
   public user: User = new User();
+  
   ngOnInit(): void {
     this.user = this.userService.getSessionUser();
     console.log(this.user);

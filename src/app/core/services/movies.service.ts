@@ -17,11 +17,6 @@ export class MoviesService {
     return this.http.get(this.ghibliAPI).toPromise();
   }
   
-
-  getAllObservable(){
-    return this.http.get(this.ghibliAPI);
-  }
-
   getAllObservable(){
     return this.http.get(this.ghibliAPI);
   }

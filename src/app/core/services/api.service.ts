@@ -44,7 +44,7 @@ export class ApiService {
       } else {
         const updatedMovies = movies ? [...movies, idPeli] : [idPeli];
         const body = {
-          idUser: idUser,
+          id: idUser,
           movies: updatedMovies,
         };
         return this.http.put<boolean>(url, body);
@@ -54,7 +54,7 @@ export class ApiService {
 }
 
 public getFavourites(idUser: number): Observable<string[]> {
-  return this.http.get<any>(`${this.baseURL}/favourites?idUser=${idUser}`).pipe(
+  return this.http.get<any>(`${this.baseURL}/favourites?id=${idUser}`).pipe(
     map((response: any) => {
       if (response && response.length > 0) {
         const user = response.find((item: any) => item.idUser === idUser);

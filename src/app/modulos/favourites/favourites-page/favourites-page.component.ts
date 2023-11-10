@@ -11,7 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class FavouritesPageComponent implements OnInit {
 
-  public movieList: Array<Movie> = [];
+  public movieListFavourite: Array<Movie> = [];
   public auxIdList: Array<string> = [];
 
   constructor(private apiService: ApiService, private userService: UserService, private movieService: MoviesService) { }
@@ -19,8 +19,9 @@ export class FavouritesPageComponent implements OnInit {
   public user: User = new User()
   ngOnInit(): void {
      this.user= this.userService.getSessionUser();
-    this.getFavourites()
+      this.getFavourites();
   }
+
   async getFavourites() {
     const res = this.apiService.getFavourites(this.user.id);
     res.subscribe(
@@ -34,10 +35,8 @@ export class FavouritesPageComponent implements OnInit {
   async getMoviesFromAux() {
     for (let i = 0; i < this.auxIdList.length; i++) {
       const idMovie = this.auxIdList[i]
-      console.log(idMovie)
       const res = await this.movieService.getById(idMovie); //busco por id
-      this.movieList.push(res);
-
+      this.movieListFavourite.push(res);
     }
   }
 
