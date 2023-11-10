@@ -14,15 +14,17 @@ export class MainPageComponent implements OnInit {
 
   public movieList: Array<Movie> = [];
   public user: User = new User();
-  
+
   ngOnInit(): void {
     this.user = this.userService.getSessionUser();
     console.log(this.user);
+
     this.movieService.getAllObservable().subscribe({
       next: (response) => this.movieList = response as Movie[],
       error(error) { console.log(error) },
       complete() { console.log("the movies are ready") }
     })
+    console.log(this.movieList)
   }
   addFavourite(idPeli: string) {
     this.apiService.setFavourite(this.user.id, idPeli).subscribe({

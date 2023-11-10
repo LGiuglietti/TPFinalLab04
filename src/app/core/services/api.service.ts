@@ -23,6 +23,7 @@ export class ApiService {
       })
     );
   }
+  
   public setUser(user: User): Observable<boolean> {
     return this.checkEmailExists(user).pipe(
       switchMap((res) => {
@@ -35,6 +36,7 @@ export class ApiService {
       })
     );
   }
+
  public setFavourite(idUser: number, idPeli: string): Observable<any> {
   const url = `${this.baseURL}/favourites/${idUser}/`;
   return this.getFavourites(idUser).pipe(

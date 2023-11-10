@@ -10,26 +10,10 @@ import { MoviesService } from 'src/app/core/services/movies.service';
 })
 export class LandingPageComponent implements OnInit{
 
-  movieListLanding: Array<any> = [];
-
-  constructor( private router: Router, private movieService: MoviesService){}
+  constructor( private router: Router){}
 
   ngOnInit(): void {
-    this.movieService.getAll()
-      .then(response => {
     
-        /*
-        this.movieList =  response.map(movie !: any => {
-          id: movie.id
-
-        })
-        */
-        this.movieListLanding = response;
-        //console.log(this.movieList);
-      })
-      .catch(error => {
-        console.log(error);        
-      })
   }
 
   public goToLogin(){

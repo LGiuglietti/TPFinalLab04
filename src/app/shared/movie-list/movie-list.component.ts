@@ -11,14 +11,14 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class MovieListComponent implements OnInit{
   @Input() movieList: Movie[]=[];
+  
   @Output() addDelete= new EventEmitter<string>()
 
-  constructor(private movieService: MoviesService){}
+  constructor(){}
 
   ngOnInit(): void {
   }
  
-
   onClick(id: string){
     this.addDelete.emit(id);
   }
