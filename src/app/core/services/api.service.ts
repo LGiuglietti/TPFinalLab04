@@ -56,16 +56,13 @@ export class ApiService {
 public getFavourites(idUser: number): Observable<string[]> {
   return this.http.get<any>(`${this.baseURL}/favourites?id=${idUser}`).pipe(
     map((response: any) => {
-      if (response && response.length > 0) {
-        const user = response.find((item: any) => item.idUser === idUser);
-        if (user && user.movies) {
-          return user.movies;
-        }
+      if (response.length > 0 && response[0].movies) { //si existe el usuario y tiene peliculas
+        return response[0].movies;
       }
-      return [];
     })
   );
 }
+
   public deleteFavourite(idUser: number, idPeli: string): Observable<boolean> {
     return this.http.delete(`${this.baseURL}/favourites?id=${idUser}&${idPeli}`)
       .pipe(
