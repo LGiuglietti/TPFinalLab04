@@ -1,2 +1,2 @@
-<app-nav-bar ></app-nav-bar>
-<app-movie-list [movieList]="movieList" (addDelete)="addFavourite($event)"></app-movie-list>
+<app-nav-bar (queryString)="filterList($event)"></app-nav-bar>
+<app-movie-list [movieList]="filteredMovieList" (addDelete)="addFavourite($event)"></app-movie-list>

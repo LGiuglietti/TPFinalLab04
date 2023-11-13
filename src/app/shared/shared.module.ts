@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { Error404Component } from './error404/error404.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
     MovieListComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     NavBarComponent,

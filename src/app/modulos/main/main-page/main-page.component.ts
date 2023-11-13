@@ -12,18 +12,19 @@ import { UserService } from 'src/app/core/services/user.service';
 export class MainPageComponent implements OnInit {
   constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService) { }
 
+  public filteredMovieList: Array<Movie> = [];
   public movieList: Array<Movie> = [];
+
   public user: User = new User();
+  flagEvent: boolean = false; //al iniciar el componente es falso
 
   ngOnInit(): void {
     this.user = this.userService.getSessionUser();
     console.log(this.user);
-
-    this.movieService.getAllObservable().subscribe({
-      next: (response) => this.movieList = response as Movie[],
-      error(error) { console.log(error) },
-      complete() { console.log("the movies are ready") }
-    })
+    if (!this.flagEvent) //si flag == false 
+    {
+      this.loadList(); //carga comun de todas las pelis
+    }
     console.log(this.movieList)
   }
   addFavourite(idPeli: string) {
@@ -41,8 +42,24 @@ export class MainPageComponent implements OnInit {
       }
     })
   }
+  loadList() {
+     this.movieService.getAllObservable().subscribe({
+      next: (response) => {
+        this.movieList = response as Movie[];
+        this.filteredMovieList=[...this.movieList];
+      },
+      error(error) { console.log(error) },
+      complete() { console.log("the movies are ready") }
+    })
+  }
 
-
-
-
+  filterList(formQuery: string) { //al dispararse el evento se filtra la lista
+     if (formQuery !== '') {
+      this.flagEvent = true;
+      this.filteredMovieList = this.movieList.filter(movie => movie.title.includes(formQuery));
+    } else {
+      this.flagEvent = false;
+      this.filteredMovieList = [...this.movieList];
+    }
+  }
 }
