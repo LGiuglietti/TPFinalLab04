@@ -5,19 +5,17 @@ import { User } from '../Models';
   providedIn: 'root'
 })
 export class UserService {
+  private readonly STORAGE_KEY = 'currentUser';
+  private readonly defaultUser: User = new User();
 
   constructor() { }
 
-  private user: User=new User();
-
-  public setSessionUser(loggedUser:User)
-  {
-    this.user=loggedUser;
+  public setSessionUser(loggedUser: User): void {
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(loggedUser));
   }
 
- public getSessionUser(): User
-  {
-    console.log(this.user)
-    return this.user;
+  public getSessionUser(): User {
+    const storedData = localStorage.getItem(this.STORAGE_KEY);
+    return storedData ? JSON.parse(storedData) : this.defaultUser;
   }
 }

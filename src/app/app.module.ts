@@ -4,23 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import "node_modules/bootstrap"
+import { CommentsModule } from './modulos/comments/comments.module';
 //import { MovieListComponent } from './shared/movie-list/movie-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    //MovieListComponent, // tira error porque tambien se declara en shared
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

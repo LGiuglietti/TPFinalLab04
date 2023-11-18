@@ -1,7 +1,7 @@
-<div class="container bg-primary">
+<div class="container" style="background-color: rgb(91, 88, 88); min-width: 85%; min-height: 100vh;">
     <div class="row p-2 bg-dark bg-opacity-50 m-auto">
         <div class=" bg-light div-card" *ngFor="let movie of movieList">
-            <img class="card-img-top p-2" src="{{ movie.image }}" alt="Card image cap">
+            <img class="card-img-top p-2" src="{{ movie.image }}" alt="Card image cap"(click)="commentClick(movie)">
             <div class="card-body">
                 <h5 class="card-title"> {{ movie.title }} ({{ movie.release_date }}) </h5>
                 <p class="card-text"> {{ movie.running_time }} Min.</p>
@@ -9,8 +9,8 @@
                 <small class="text-muted">Directed by {{ movie.director }} </small>
             </div>
             <div class="card-footer m-4 p-2">
-                <button class="btn btn-primary" style="position: absolute; bottom: 0; margin: 5px 0px;" (click)="onClick(movie.id)">
-                    Add to favorite
+                <button class="btn btn-secondary" style="position: absolute; bottom: 0; margin: 5px 0px;" (click)="onClick(movie.id)">
+                    {{buttonText}}
                 </button>
             </div>
 

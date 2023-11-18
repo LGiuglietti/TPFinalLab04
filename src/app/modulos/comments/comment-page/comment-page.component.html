@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="imageContainer">
+        <img class="image" [src]="movie.image" alt="Movie Image">
+    </div>
+        <div style=" width: 50%;">
+            <div class="comment"><!-- div correspondiente a los comentarios -->
+                <div class="card" style="margin: 5px 15px 10px 15px;  min-width: 95%; " *ngIf="!commentArray.length">
+                    <div class="card-header">
+                        Developers
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0" style="font-size: medium;">
+                            <h2>No comments yet to display</h2>
+                            <br>
+                            <footer class="blockquote-footer">You can be the first!!</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card" style="margin: 5px 15px 10px 15px; min-width: 95%;" *ngFor="let comment of commentArray">
+                    <div class="card-header">
+                        {{comment.userName}}
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0" style="font-size: medium;">
+                            <p>{{comment.content}}</p>
+                            <footer class="blockquote-footer">{{comment.dateOfComment}}</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div><!-- div del form correspondiente a ingresar comentario -->
+                <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+                    <div class="newComment">
+                        <input formControlName="content" type="text"
+                            style="width: 90%; margin-left: 15px; margin-right: 15px;"
+                            placeholder="  Remember to be respectful in chat">
+                        <button type="submit" style="margin-right: 5px;" class="btn btn-Dark">Send</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>

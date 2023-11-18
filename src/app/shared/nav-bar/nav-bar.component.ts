@@ -14,11 +14,14 @@ export class NavBarComponent implements OnInit {
   @Output() queryString = new EventEmitter<string>()
   //output
   searchForm: FormGroup;
+  currentRoute: string;
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.searchForm = this.formBuilder.group({
       searchQuery: ''
     });
+    this.currentRoute = this.router.url;
+    console.log(this.currentRoute);
   }
 
   ngOnInit(): void {

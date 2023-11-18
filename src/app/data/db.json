@@ -41,28 +41,200 @@
       "email": "noe@gmail.com",
       "password": "noe",
       "id": 6
+    },
+    {
+      "userName": "qwett",
+      "email": "papa@gmail.com",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "userName": "asd",
+      "email": "asd",
+      "password": "asd",
+      "id": 8
+    },
+    {
+      "userName": "mama",
+      "email": "mama@gmail.com",
+      "password": "1",
+      "id": 9
     }
   ],
   "favourites": [
     {
       "id": 0,
       "movies": [
-        "12cfb892-aac0-4c5b-94af-521852e46d6a",
-        "2baf70d1-42bb-4437-b551-e5fed5a87abe",
-        "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
-        "ebbb6b7c-945c-41ee-a792-de0e43191bd8"
+        "ff24da26-a969-4f0e-ba1e-a122ead6c6e3"
       ]
+    },
+    {
+      "id": 1,
+      "movies": []
+    },
+    {
+      "id": 2,
+      "movies": []
     },
     {
       "id": 3,
       "movies": [
         "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
-        "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
-        "4e236f34-b981-41c3-8c65-f8c9000b94e7",
-        "90b72513-afd4-4570-84de-a56c312fdf81",
+        "d868e6ec-c44a-405b-8fa6-f7f0f8cfb500",
+        "790e0028-a31c-4626-a694-86b7a8cada40",
+        "12cfb892-aac0-4c5b-94af-521852e46d6a"
+      ]
+    },
+    {
+      "id": 4,
+      "movies": []
+    },
+    {
+      "id": 5,
+      "movies": []
+    },
+    {
+      "id": 6,
+      "movies": [
+        "12cfb892-aac0-4c5b-94af-521852e46d6a",
+        "ff24da26-a969-4f0e-ba1e-a122ead6c6e3"
+      ]
+    },
+    {
+      "id": 7,
+      "movies": []
+    },
+    {
+      "id": 8,
+      "movies": []
+    },
+    {
+      "id": 9,
+      "movies": [
         "1b67aa9a-2e4a-45af-ac98-64d6ad15b16c",
-        "2de9426b-914a-4a06-a3a0-5e6d9d3886f6"
+        "12cfb892-aac0-4c5b-94af-521852e46d6a",
+        "ea660b10-85c4-4ae3-8a5f-41cea3648e3e"
       ]
     }
+  ],
+  "comments": [
+    {
+      "id": "1b67aa9a-2e4a-45af-ac98-64d6ad15b16c",
+      "comments": [
+        {
+          "dateOfComment": "2023-11-09",
+          "content": "La mejor pelicula del planeta tierra, amaba verla de chiquito con mis papas y mis hermanos",
+          "userName": "alex echeverria"
+        },
+        {
+          "dateOfComment": "2022-12-12",
+          "content": "aguante boquita y Pompoko",
+          "userName": "bostero99"
+        }
+      ]
+    },
+    {
+      "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+      "comments": []
+    },
+    {
+      "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
+      "comments": [
+        {
+          "content": "El delivery de kiki siempre funciona las 24hs",
+          "dateOfComment": "2023-11-18T20:39:01.897Z",
+          "userName": "asd"
+        }
+      ]
+    },
+    {
+      "id": "90b72513-afd4-4570-84de-a56c312fdf81",
+      "comments": []
+    },
+    {
+      "id": "2de9426b-914a-4a06-a3a0-5e6d9d3886f6",
+      "comments": []
+    },
+    {
+      "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+      "comments": []
+    },
+    {
+      "id": "ebbb6b7c-945c-41ee-a792-de0e43191bd8",
+      "comments": [
+        {
+          "content": "Amaba esta peli de chiquito",
+          "dateOfComment": "2023-11-18T21:23:34.671Z",
+          "userName": "asd"
+        }
+      ]
+    },
+    {
+      "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
+      "comments": []
+    },
+    {
+      "id": "4e236f34-b981-41c3-8c65-f8c9000b94e7",
+      "comments": []
+    },
+    {
+      "id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
+      "comments": []
+    },
+    {
+      "id": "0440483e-ca0e-4120-8c50-4c8cd9b965d6",
+      "comments": []
+    },
+    {
+      "id": "112c1e67-726f-40b1-ac17-6974127bb9b9",
+      "comments": []
+    },
+    {
+      "id": "45204234-adfd-45cb-a505-a8e7a676b114",
+      "comments": []
+    },
+    {
+      "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
+      "comments": []
+    },
+    {
+      "id": "758bf02e-3122-46e0-884e-67cf83df1786",
+      "comments": []
+    },
+    {
+      "id": "45db04e4-304a-4933-9823-33f389e8d74d",
+      "comments": []
+    },
+    {
+      "id": "67405111-37a5-438f-81cc-4666af60c800",
+      "comments": [
+        {
+          "content": "Este comentario de prueba es traido a ustedes de Studio Ghibli",
+          "dateOfComment": "2023-11-18T20:34:13.239Z",
+          "userName": "asd"
+        }
+      ]
+    },
+    {
+      "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
+      "comments": []
+    },
+    {
+      "id": "5fdfb320-2a02-49a7-94ff-5ca418cae602",
+      "comments": []
+    },
+    {
+      "id": "d868e6ec-c44a-405b-8fa6-f7f0f8cfb500",
+      "comments": []
+    },
+    {
+      "id": "790e0028-a31c-4626-a694-86b7a8cada40",
+      "comments": []
+    },
+    {
+      "id": "ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
+      "comments": []
+    }
+    
   ]
 }
