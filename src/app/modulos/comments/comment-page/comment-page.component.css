@@ -1,0 +1,41 @@
+.container {
+    width: 100%;
+    height: 92.3vh;
+    display: flex;
+    background-color: grey;
+}
+.imageContainer{
+    margin: 15px 10% 15px 15px;
+    object-fit: contain; 
+    
+}
+
+.image {
+    width: 120%;
+    height: calc(100vh - 12vh);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.comment {
+    box-sizing: border-box;
+    border: 5px solid rgb(91, 88, 88);
+    border-radius: 15px 0px 0px 0px ;
+    overflow-y: scroll;
+    height: 90%;
+    width: 100%;
+    margin-left: 5vh;
+    margin-top: 1vh;
+
+}
+.newComment{
+    border-left: 5px solid rgb(91, 88, 88);
+    border-right: 5px solid rgb(91, 88, 88);
+    border-bottom: 5px solid rgb(91, 88, 88);
+    border-radius: 0px 0px 15px 15px;
+    padding: 5px 0px 5px 0px;
+    background-color: lightgray;
+    display: flex;
+    margin-bottom: 15px;
+    width: 100%;
+    margin-left: 5vh;
+}

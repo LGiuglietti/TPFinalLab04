@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FavouritesRoutingModule } from './favourites-routing.module';
 import { FavouritesPageComponent } from './favourites-page/favourites-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     FavouritesRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class FavouritesModule { }

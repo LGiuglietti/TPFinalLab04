@@ -53,3 +53,15 @@ export class Favourite{
         this.idUser=0;
     }
 }
+export class Comment{
+    userName: string;
+    dateOfComment: Date;
+    content: string;
+
+    constructor()
+    {
+        this.content='';
+        this.dateOfComment=new Date();//atento usa el tiempo actual
+        this.userName='';
+    }
+}

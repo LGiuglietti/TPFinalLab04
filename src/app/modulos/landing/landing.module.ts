@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,6 +14,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   imports: [
     CommonModule,
     LandingRoutingModule,
+    ReactiveFormsModule
   ],
 })
 export class LandingModule { }
