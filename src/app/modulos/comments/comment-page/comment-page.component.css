@@ -18,6 +18,7 @@
 
 .comment {
     box-sizing: border-box;
+    background-color: rgb(206, 205, 205);
     border: 5px solid rgb(91, 88, 88);
     border-radius: 15px 0px 0px 0px ;
     overflow-y: scroll;
