@@ -55,13 +55,13 @@ export class Favourite{
 }
 export class Comment{
     userName: string;
-    dateOfComment: Date;
+    dateOfComment: string;
     content: string;
 
     constructor()
     {
         this.content='';
-        this.dateOfComment=new Date();//atento usa el tiempo actual
+        this.dateOfComment='';//atento usa el tiempo actual
         this.userName='';
     }
 }

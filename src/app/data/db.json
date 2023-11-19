@@ -19,7 +19,7 @@
       "password": "userTest12345"
     },
     {
-      "userName": "asd",
+      "userName": "laucha",
       "email": "lauchax129@gmail.com",
       "password": "132",
       "id": 3
@@ -81,8 +81,8 @@
       "movies": [
         "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
         "d868e6ec-c44a-405b-8fa6-f7f0f8cfb500",
-        "790e0028-a31c-4626-a694-86b7a8cada40",
-        "12cfb892-aac0-4c5b-94af-521852e46d6a"
+        "12cfb892-aac0-4c5b-94af-521852e46d6a",
+        "ea660b10-85c4-4ae3-8a5f-41cea3648e3e"
       ]
     },
     {
@@ -144,6 +144,11 @@
           "content": "El delivery de kiki siempre funciona las 24hs",
           "dateOfComment": "2023-11-18T20:39:01.897Z",
           "userName": "asd"
+        },
+        {
+          "content": "Me encanta ver esta peli con mi novia",
+          "dateOfComment": "2023-11-19T20:51:28.388Z",
+          "userName": "asd"
         }
       ]
     },
@@ -171,7 +176,13 @@
     },
     {
       "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
-      "comments": []
+      "comments": [
+        {
+          "content": "me hizo llorar",
+          "dateOfComment": "2023-11-19",
+          "userName": "asd"
+        }
+      ]
     },
     {
       "id": "4e236f34-b981-41c3-8c65-f8c9000b94e7",
@@ -210,7 +221,7 @@
       "comments": [
         {
           "content": "Este comentario de prueba es traido a ustedes de Studio Ghibli",
-          "dateOfComment": "2023-11-18T20:34:13.239Z",
+          "dateOfComment": "2023-11-18",
           "userName": "asd"
         }
       ]
@@ -235,6 +246,5 @@
       "id": "ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
       "comments": []
     }
-    
   ]
 }
