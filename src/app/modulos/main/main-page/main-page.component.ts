@@ -11,6 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class MainPageComponent implements OnInit {
   constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService) { }
+  
   public buttonText: string ="Add to favorites";
   public filteredMovieList: Array<Movie> = [];
   public movieList: Array<Movie> = [];
