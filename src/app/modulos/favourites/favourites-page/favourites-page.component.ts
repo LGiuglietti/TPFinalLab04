@@ -48,14 +48,13 @@ export class FavouritesPageComponent implements OnInit {
 
   deleteFavorite(idPeli: string) {
     this.apiService.deleteFavourite(this.user.id, idPeli).subscribe({
-      next: (res) => {
-        alert("movie eliminated from favorites");
+      next: () => {
         this.router.routeReuseStrategy.shouldReuseRoute = () => false; //si bien no me gusta usar deprecados es la solucion mas sencilla 
         this.router.onSameUrlNavigation = 'reload';
         this.router.navigate([this.route.snapshot.url]);
       },
       error: () => {
-        alert("error");
+        console.log("error");
       }
     })
   }

@@ -39,7 +39,6 @@ export class MainPageComponent implements OnInit {
       },
       error: (error) => {
         console.error("Error al procesar la solicitud: ", error);
-        alert("Error al procesar la solicitud");
       }
     })
   }

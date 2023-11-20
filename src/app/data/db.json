@@ -4,7 +4,7 @@
       "id": 0,
       "userName": "admin",
       "email": "admin@gmail.com",
-      "password": "a"
+      "password": "admin123"
     },
     {
       "id": 1,
@@ -21,7 +21,7 @@
     {
       "userName": "laucha",
       "email": "lauchax129@gmail.com",
-      "password": "132",
+      "password": "12345678",
       "id": 3
     },
     {
@@ -39,25 +39,25 @@
     {
       "userName": "noe",
       "email": "noe@gmail.com",
-      "password": "noe",
+      "password": "noe12345678",
       "id": 6
     },
     {
       "userName": "qwett",
       "email": "papa@gmail.com",
-      "password": "123",
+      "password": "12345678",
       "id": 7
     },
     {
       "userName": "asd",
       "email": "asd",
-      "password": "asd",
+      "password": "12345678",
       "id": 8
     },
     {
       "userName": "mama",
       "email": "mama@gmail.com",
-      "password": "1",
+      "password": "12345678",
       "id": 9
     }
   ],
@@ -91,7 +91,10 @@
     },
     {
       "id": 5,
-      "movies": []
+      "movies": [
+        "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+        "12cfb892-aac0-4c5b-94af-521852e46d6a"
+      ]
     },
     {
       "id": 6,
@@ -142,12 +145,12 @@
       "comments": [
         {
           "content": "El delivery de kiki siempre funciona las 24hs",
-          "dateOfComment": "2023-11-18T20:39:01.897Z",
+          "dateOfComment": "2023-11-18",
           "userName": "asd"
         },
         {
           "content": "Me encanta ver esta peli con mi novia",
-          "dateOfComment": "2023-11-19T20:51:28.388Z",
+          "dateOfComment": "2023-11-19",
           "userName": "asd"
         }
       ]
@@ -162,7 +165,13 @@
     },
     {
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
-      "comments": []
+      "comments": [
+        {
+          "content": "Esta peli la veia con mi mami",
+          "dateOfComment": "2023-11-20",
+          "userName": "Jose"
+        }
+      ]
     },
     {
       "id": "ebbb6b7c-945c-41ee-a792-de0e43191bd8",

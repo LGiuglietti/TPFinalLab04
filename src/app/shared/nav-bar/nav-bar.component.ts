@@ -15,6 +15,7 @@ export class NavBarComponent implements OnInit {
   //output
   searchForm: FormGroup;
   currentRoute: string;
+  showDiv: number = 0;
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.searchForm = this.formBuilder.group({
@@ -26,6 +27,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     const check = this.router.url;
+    this.checkRoute();
   }
 
   public logout() {
@@ -39,6 +41,18 @@ export class NavBarComponent implements OnInit {
 
   public goToHome() {
     this.router.navigate(["/main"]);
+  }
+
+  checkRoute(){
+    if(this.router.url=='/favourite'){
+      this.showDiv=1;
+    }
+    else if(this.router.url=='/comments'){
+      this.showDiv=2;
+    }
+    else{
+      this.showDiv=0;
+    }
   }
 
   onSubmit() {
