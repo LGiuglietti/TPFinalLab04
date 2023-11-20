@@ -10,10 +10,11 @@ import { MoviesService } from 'src/app/core/services/movies.service';
 })
 export class LandingPageComponent implements OnInit{
 
-  constructor( private router: Router){}
+  constructor( private router: Router, private movieService: MoviesService){}
 
+  arrayMovieImages: string[]=[];
   ngOnInit(): void {
-    
+    this.getMovies();
   }
 
   public goToLogin(){
@@ -23,4 +24,15 @@ export class LandingPageComponent implements OnInit{
   public goToRegister(){
     this.router.navigate(["auth/register"]);
   }
+
+  public getMovies(){
+    this.movieService.getImagesCarrousel().subscribe({
+      next:(res)=>{
+        console.log(res);
+        this.arrayMovieImages=res;
+        console.log(this.arrayMovieImages);
+      }
+    })
+  }
+
 }
