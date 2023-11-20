@@ -1,17 +1,55 @@
+.movie-list{
+    border-radius: 10px;
+    background: rgb(175, 172, 167);
+    /* 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    */
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.container-button{
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin: 18px auto;
+}
+
+.btn{
+    bottom: 0;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover{
+    background-color: rgb(0, 0, 0);
+    font-weight: bolder;
+    scale: 1.2;
+    transition: all 1.2s;
+}
+
 .div-card{
     width: 18rem;
-    
-    position: relative; 
-    height: 535px;
+    position: relative;
+    height: 550px;
     border-radius: 10px;
-    margin: 20px 15px;
+    margin: 20px 20px;
 }
 
 .div-card:hover{
-    margin: 20px 20px;
+    /* margin: 20px 20px;*/
     scale: 1.1;
     transition: all 1s;
-    margin: 10px 10px;
     cursor: pointer;
 }
 

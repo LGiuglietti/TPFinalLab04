@@ -1,0 +1,7 @@
+.nav-link:hover{
+    cursor: pointer;
+    scale: 1.3;
+    transition: all 1.1s;
+    font-weight: bolder;
+    margin: 5px 5px;
+}

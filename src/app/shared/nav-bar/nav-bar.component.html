@@ -10,10 +10,10 @@
       <a class="nav-link text-light" (click)="goToHome()">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item" [ngClass]="{ 'disabled': currentRoute === '/favourite' }">
-      <a class="nav-link text-light" (click)="goToFavourite()">Favoritos</a>
+      <a class="nav-link text-light" (click)="goToFavourite()">Favorites</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-light" (click)="logout()">Cerrar sesión</a>
+      <a class="nav-link text-light" (click)="logout()">Log Out</a>
     </li>
   </ul>
     <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
