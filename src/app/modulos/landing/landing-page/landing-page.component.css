@@ -21,7 +21,7 @@
 
 .carousel-img{
     position: relative;
-    margin: 50px 10px;
+    margin: 10px 10px 10px;
     
 }
 
@@ -33,6 +33,12 @@
     justify-content: center;
     margin: 30px auto;
     width: 20rem;
+    background-color: rgb(160, 160, 160);
+    box-sizing: border-box;
+    background-color: rgb(206, 205, 205);
+    border: 5px solid rgb(91, 88, 88);
+    border-radius: 15px 15px 15px 15px ;
+
 }
 
 .btn{
