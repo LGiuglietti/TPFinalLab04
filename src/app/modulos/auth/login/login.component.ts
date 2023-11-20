@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
     }
 
     if (this.form.valid) {
-      alert("formulario valido cumple con todo los validators")
       this.user.email = this.form.get("email")?.value
       this.user.password = this.form.get("password")?.value
 
@@ -52,10 +51,9 @@ export class LoginComponent implements OnInit {
         }
         else {
           throw new Error;
-
         }
       } catch (error) {
-        alert("usuario inexistente");
+        console.log(error);
       }
     }
 
