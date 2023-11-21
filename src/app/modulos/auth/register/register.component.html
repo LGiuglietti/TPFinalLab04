@@ -9,16 +9,13 @@
                 </div>
                 <div *ngIf="(form.controls['username'].getError('required') && 
                             form.controls['username'].touched) && 
-                            (form.controls['username'].invalid || 
-                            form.invalid)" class="alert alert-danger" role="alert">
+                            (form.controls['username'].invalid || form.invalid)" class="alert alert-danger" role="alert">
                     Please enter a username
                 </div>
-                <div *ngIf="(form.controls['username'].getError('minlength') || form.controls['username'].invalid) && form.controls['username'].touched " class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['username'].getError('minlength') &&
+                             form.controls['username'].invalid) && form.controls['username'].touched " class="alert alert-danger" role="alert">
                     Enter an username that must contain at least 3 characters.
                 </div>
-
-
-
 
                 <div class="mb-3">
                     <label for="email" class="form-label">What is your e-mail?</label>
@@ -31,16 +28,14 @@
                             (form.controls['email'].invalid || form.invalid)" class="alert alert-danger" role="alert">
                     Please enter your email
                 </div>
-                <div *ngIf="(form.controls['email'].getError('minlength') || 
+                <div *ngIf="(form.controls['email'].getError('minlength') &&
                             form.controls['email'].invalid) && 
                             form.controls['email'].touched " class="alert alert-danger" role="alert">
                     Enter an email that must contain at least 5 characters.
                 </div>
                 
                 
-                
-                
-                
+        
                 <div class="mb-3 ">
                     <label for="password" class="form-label">Now write your password 👇</label>
                     <input type="password" class="form-control" name="password"
@@ -48,13 +43,11 @@
                 </div>
                 <div *ngIf="(form.controls['password'].getError('required') && 
                             form.controls['password'].touched) &&(
-                            form.controls['password'].invalid || 
-                            form.invalid) " class="alert alert-danger" role="alert">
+                            form.controls['password'].invalid || form.invalid) " class="alert alert-danger" role="alert">
                     Please enter your password
                 </div>
-                <div *ngIf="(form.controls['password'].getError('minlength')|| 
-                            form.controls['password'].invalid) && 
-                            form.controls['password'].touched " class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['password'].getError('minlength') && 
+                            form.controls['password'].invalid) && form.controls['password'].touched " class="alert alert-danger" role="alert">
                     Enter an password that must contain at least 8 characters.
                 </div>
 
@@ -68,19 +61,18 @@
                     <input type="password" class="form-control" name="repeatpassword"
                         formControlName="repeatpassword" placeholder="Enter your password here">
                 </div>
-                <div *ngIf="(form.controls['repeatpassword'].getError('required') ||
-                            form.controls['repeatpassword'].touched || form.controls['repeatpassword'].invalid) && 
+                <div *ngIf="(form.controls['repeatpassword'].getError('required') &&
+                            form.controls['repeatpassword'].touched &&
+                            form.controls['repeatpassword'].invalid) && 
                             form.controls['repeatpassword'].getError('minlength') && 
                             form.invalid " class="alert alert-danger" role="alert">
                     Please repeat your password again.
                 </div>
 
 
-
                 <div *ngIf="message" class="alert alert-danger" role="alert">
                     {{ message }}
                 </div>
-
                 <div *ngIf="(form.touched || form.dirty) && form.invalid" class="alert alert-danger" role="alert">
                     Please complete this form
                 </div>

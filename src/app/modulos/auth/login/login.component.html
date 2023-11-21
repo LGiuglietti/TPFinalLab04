@@ -8,10 +8,13 @@
                         formControlName="email" placeholder="Enter your e-mail here">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
-                <div *ngIf="(form.controls['email'].getError('required') && form.controls['email'].touched) && (form.controls['email'].invalid || form.invalid)" class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['email'].getError('required') && 
+                            form.controls['email'].touched) && 
+                            (form.controls['email'].invalid || form.invalid)" class="alert alert-danger" role="alert">
                     Please enter your email
                 </div>
-                <div *ngIf="(form.controls['email'].getError('minlength') || form.controls['email'].invalid) && form.controls['email'].touched " class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['email'].getError('minlength') && 
+                            form.controls['email'].invalid) && form.controls['email'].touched" class="alert alert-danger" role="alert">
                     Enter an email that must contain at least 5 characters.
                 </div>
 
@@ -21,13 +24,18 @@
                         formControlName="password" placeholder="Enter your password here">
                     <div id="emailHelp" class="form-text">We'll never share your password with anyone else.</div>
                 </div>
-                <div *ngIf="(form.controls['password'].getError('required') && form.controls['password'].touched) &&(form.controls['password'].invalid || form.invalid) " class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['password'].getError('required') &&
+                            form.controls['password'].touched) &&
+                            (form.controls['password'].invalid || form.invalid) " class="alert alert-danger" role="alert">
                     Please enter your password
                 </div>
-                <div *ngIf="(form.controls['password'].getError('minlength') || form.controls['password'].invalid) && form.controls['password'].touched " class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['password'].getError('minlength') &&
+                            form.controls['password'].invalid) && form.controls['password'].touched" class="alert alert-danger" role="alert">
                     Enter an password that must contain at least 8 characters.
                 </div>
-                <div *ngIf="(form.touched || form.dirty) && form.invalid" class="alert alert-danger" role="alert">
+                <div *ngIf="(form.touched  && form.controls['password'].invalid && form.controls['email'].invalid) ||
+                            form.controls['email'].getError('required') && form.controls['email'].touched &&
+                            form.controls['password'].getError('required') && form.controls['password'].touched  || form.controls['password'].dirty"  class="alert alert-danger" role="alert">
                     Please enter your E-mail and Password to LogIn
                 </div>
 
