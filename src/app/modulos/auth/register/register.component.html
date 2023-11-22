@@ -51,22 +51,19 @@
                     Enter an password that must contain at least 8 characters.
                 </div>
 
-                
-                
-                
-                
-                
                 <div class="mb-3 ">
                     <label for="repeatpassword" class="form-label">Repeat your password again 👇</label>
                     <input type="password" class="form-control" name="repeatpassword"
                         formControlName="repeatpassword" placeholder="Enter your password here">
                 </div>
-                <div *ngIf="(form.controls['repeatpassword'].getError('required') &&
-                            form.controls['repeatpassword'].touched &&
-                            form.controls['repeatpassword'].invalid) && 
-                            form.controls['repeatpassword'].getError('minlength') && 
-                            form.invalid " class="alert alert-danger" role="alert">
+                <div *ngIf="(form.controls['repeatpassword'].getError('minlength') &&
+                            form.controls['repeatpassword'].invalid) &&
+                            form.controls['repeatpassword'].touched" class="alert alert-danger" role="alert">
                     Please repeat your password again.
+                </div>
+                <div *ngIf="(form.controls['repeatpassword'].getError('minlength') && 
+                            form.controls['repeatpassword'].invalid) && form.controls['repeatpassword'].touched " class="alert alert-danger" role="alert">
+                    Enter an password that must contain at least 8 characters.
                 </div>
 
 

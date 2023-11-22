@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Movie, User } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
 import { MoviesService } from 'src/app/core/services/movies.service';
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService) { }
+  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService, private toastr:ToastrService) { }
   
   public buttonText: string ="Add to favorites";
   public filteredMovieList: Array<Movie> = [];
@@ -32,9 +33,11 @@ export class MainPageComponent implements OnInit {
     this.apiService.setFavourite(this.user.id, idPeli).subscribe({
       next: (response) => {
         if (response) {
-          alert("Pelicula agregada");
+          this.toastr.success("Movie added to favorite.", "OK!")
+          //alert("Pelicula agregada");
         } else {
-          alert("Pelicula ya en favoritos");
+          this.toastr.warning("The movie was already added to favorite.", "Alert!")
+          //alert("Pelicula ya en favoritos");
         }
       },
       error: (error) => {

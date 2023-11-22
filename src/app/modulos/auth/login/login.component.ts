@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastNoAnimation, ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
-
+import { ModalComponent } from 'src/app/shared/modal/modal.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     password: ["", [Validators.required, Validators.minLength(8)]]
   })
 
-  constructor(private authService: AuthService, private router: Router, private userService: UserService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private router: Router, private userService: UserService, 
+              private formBuilder: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit(): void { }
 
@@ -28,7 +30,8 @@ export class LoginComponent implements OnInit {
     console.log(this.form.value);
 
     if (this.form.invalid) {
-      alert("formulario invalido NO cumple con todo los validators")
+      //alert("formulario invalido NO cumple con todo los validators")
+      this.toastr.error("Please complete with E-mail and Password", "Ooops a Error")
       return;
     }
 

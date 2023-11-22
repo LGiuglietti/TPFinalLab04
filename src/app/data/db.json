@@ -59,6 +59,48 @@
       "email": "mama@gmail.com",
       "password": "12345678",
       "id": 9
+    },
+    {
+      "userName": "elon",
+      "email": "elon@tesla.com",
+      "password": "tesla1234",
+      "id": 10
+    },
+    {
+      "userName": "jose",
+      "email": "jose@jo.com",
+      "password": "jose1234",
+      "id": 11
+    },
+    {
+      "userName": "Nahuel",
+      "email": "alex@nahuel.com",
+      "password": "alexnahuel",
+      "id": 12
+    },
+    {
+      "userName": "maira",
+      "email": "mai@ailen.com",
+      "password": "mairaailen",
+      "id": 13
+    },
+    {
+      "userName": "juan",
+      "email": "juan@ju.com",
+      "password": "juan1234",
+      "id": 14
+    },
+    {
+      "userName": "sara",
+      "email": "sarita@len.com",
+      "password": "sarita123",
+      "id": 15
+    },
+    {
+      "userName": "laura",
+      "email": "lau@16.com",
+      "password": "laurita1",
+      "id": 16
     }
   ],
   "favourites": [
@@ -79,14 +121,18 @@
     {
       "id": 3,
       "movies": [
-        "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
         "12cfb892-aac0-4c5b-94af-521852e46d6a",
-        "cd3d059c-09f4-4ff3-8d63-bc765a5184fa"
+        "112c1e67-726f-40b1-ac17-6974127bb9b9",
+        "0440483e-ca0e-4120-8c50-4c8cd9b965d6",
+        "90b72513-afd4-4570-84de-a56c312fdf81",
+        "58611129-2dbc-4a81-a72f-77ddfc1b1b49"
       ]
     },
     {
       "id": 4,
-      "movies": []
+      "movies": [
+        "2baf70d1-42bb-4437-b551-e5fed5a87abe"
+      ]
     },
     {
       "id": 5,
@@ -117,6 +163,34 @@
         "12cfb892-aac0-4c5b-94af-521852e46d6a",
         "ea660b10-85c4-4ae3-8a5f-41cea3648e3e"
       ]
+    },
+    {
+      "id": 10,
+      "movies": []
+    },
+    {
+      "id": 11,
+      "movies": []
+    },
+    {
+      "id": 12,
+      "movies": []
+    },
+    {
+      "id": 13,
+      "movies": []
+    },
+    {
+      "id": 14,
+      "movies": []
+    },
+    {
+      "id": 15,
+      "movies": []
+    },
+    {
+      "id": 16,
+      "movies": []
     }
   ],
   "comments": [

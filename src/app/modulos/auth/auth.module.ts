@@ -6,18 +6,22 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// import { MatDialogModule } from '@angular/material/dialog';
+
+
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
+    
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    //MatDialogModule
   ]
 })
 export class AuthModule implements OnInit{
