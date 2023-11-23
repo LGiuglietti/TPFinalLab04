@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     if (this.form.invalid) {
       //alert("formulario invalido NO cumple con todo los validators")
-      this.toastr.error("Please complete with E-mail and Password", "Ooops a Error")
+      this.toastr.error("Please complete all the fields", "Ooops an Error")
       return;
     }
 

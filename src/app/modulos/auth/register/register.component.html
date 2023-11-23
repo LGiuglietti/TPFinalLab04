@@ -4,23 +4,25 @@
             <form (ngSubmit)="userRegister()" [formGroup]="form">
                 <div class="mb-3">
                     <label for="username" class="form-label">What is your name?</label>
-                    <input class="form-control" aria-describedby="emailHelp" type="text"
-                        name="username" formControlName="username" placeholder="Enter your name here">
+                    <input class="form-control" aria-describedby="emailHelp" type="text" name="username"
+                        formControlName="username" placeholder="Enter your name here">
                 </div>
                 <div *ngIf="(form.controls['username'].getError('required') && 
                             form.controls['username'].touched) && 
-                            (form.controls['username'].invalid || form.invalid)" class="alert alert-danger" role="alert">
-                    Please enter a username
+                            (form.controls['username'].invalid || form.invalid)" class="alert alert-danger"
+                    role="alert">
+                    Enter a username
                 </div>
                 <div *ngIf="(form.controls['username'].getError('minlength') &&
-                             form.controls['username'].invalid) && form.controls['username'].touched " class="alert alert-danger" role="alert">
-                    Enter an username that must contain at least 3 characters.
+                             form.controls['username'].invalid) && form.controls['username'].touched "
+                    class="alert alert-danger" role="alert">
+                    A username must contain at least 3 characters.
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">What is your e-mail?</label>
-                    <input class="form-control" aria-describedby="emailHelp" type="email"
-                        name="email" formControlName="email" placeholder="Enter your e-mail here">
+                    <input class="form-control" aria-describedby="emailHelp" type="email" name="email"
+                        formControlName="email" placeholder="Enter your e-mail here">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div *ngIf="(form.controls['email'].getError('required') && 
@@ -31,39 +33,42 @@
                 <div *ngIf="(form.controls['email'].getError('minlength') &&
                             form.controls['email'].invalid) && 
                             form.controls['email'].touched " class="alert alert-danger" role="alert">
-                    Enter an email that must contain at least 5 characters.
+                    An email must contain at least 5 characters.
                 </div>
-                
-                
-        
+
+
+
                 <div class="mb-3 ">
-                    <label for="password" class="form-label">Now write your password 👇</label>
-                    <input type="password" class="form-control" name="password"
-                        formControlName="password" placeholder="Enter your password here">
+                    <label for="password" class="form-label">Now your password 👇</label>
+                    <input type="password" class="form-control" name="password" formControlName="password"
+                        placeholder="Enter your password here">
                 </div>
                 <div *ngIf="(form.controls['password'].getError('required') && 
                             form.controls['password'].touched) &&(
-                            form.controls['password'].invalid || form.invalid) " class="alert alert-danger" role="alert">
+                            form.controls['password'].invalid || form.invalid) " class="alert alert-danger"
+                    role="alert">
                     Please enter your password
                 </div>
                 <div *ngIf="(form.controls['password'].getError('minlength') && 
-                            form.controls['password'].invalid) && form.controls['password'].touched " class="alert alert-danger" role="alert">
-                    Enter an password that must contain at least 8 characters.
+                            form.controls['password'].invalid) && form.controls['password'].touched "
+                    class="alert alert-danger" role="alert">
+                    A password must contain at least 8 characters.
                 </div>
 
                 <div class="mb-3 ">
                     <label for="repeatpassword" class="form-label">Repeat your password again 👇</label>
-                    <input type="password" class="form-control" name="repeatpassword"
-                        formControlName="repeatpassword" placeholder="Enter your password here">
+                    <input type="password" class="form-control" name="repeatpassword" formControlName="repeatpassword"
+                        placeholder="Enter your password here">
                 </div>
                 <div *ngIf="(form.controls['repeatpassword'].getError('minlength') &&
                             form.controls['repeatpassword'].invalid) &&
                             form.controls['repeatpassword'].touched" class="alert alert-danger" role="alert">
-                    Please repeat your password again.
+                    Please repeat your password.
                 </div>
                 <div *ngIf="(form.controls['repeatpassword'].getError('minlength') && 
-                            form.controls['repeatpassword'].invalid) && form.controls['repeatpassword'].touched " class="alert alert-danger" role="alert">
-                    Enter an password that must contain at least 8 characters.
+                            form.controls['repeatpassword'].invalid) && form.controls['repeatpassword'].touched "
+                    class="alert alert-danger" role="alert">
+                    A password must contain at least 8 characters.
                 </div>
 
 
@@ -74,10 +79,10 @@
                     Please complete this form
                 </div>
 
-                
+
 
                 <button type="submit" class="btn btn-primary"> Sign up </button>
-            </form>        
+            </form>
         </div>
         <div class=" col-md-6 m-5">
             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW9qbjdjcHE1NzBzdzlrem9oa3ViMWdvZHpmOXA1aHByOWQ2MmV4NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6afAyZFRgF1e0fc4HC/giphy.gif"
@@ -88,10 +93,10 @@
 
 <div class="wrongway-container">
     <div class="d-flex align-items-center justify-content-center vh-80 wrongway-container">
-        <h2>Wrong way? Don't worry</h2>
+        <h2>Bad click? Don't worry</h2>
         <div class="m-3">
             <button class="btn btn-primary" (click)="goLogin()"> Log in</button>
             <button class="btn btn-secondary" (click)="goHome()"> Go home </button>
-        </div>    
+        </div>
     </div>
 </div>

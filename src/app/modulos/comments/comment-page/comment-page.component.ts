@@ -24,10 +24,15 @@ export class CommentPageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.user = this.userService.getSessionUser(); //traigo el objeto User
+    if(this.user.userName!=''){
     this.initializeForm();
     this.movie = this.commentService.getPeli(); //traigo el objeto Movie
-    this.user = this.userService.getSessionUser(); //traigo el objeto User
     this.getComments();
+  }
+  else{
+    this.router.navigate(['landing']);
+  }
   }
 
   initializeForm(): void {

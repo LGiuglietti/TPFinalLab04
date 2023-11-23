@@ -16,14 +16,19 @@ export class FavouritesPageComponent implements OnInit {
   public auxIdList: Array<string> = [];
   public buttonText: string = "Delete";
   public user: User = new User()
-  
+
 
   constructor(private apiService: ApiService, private userService: UserService, private movieService: MoviesService,
-     private router: Router,private route: ActivatedRoute) { }
-  
+    private router: Router, private route: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.user = this.userService.getSessionUser();
-    this.getFavourites();
+    if (this.user.userName != '') {
+      this.getFavourites();
+    }
+    else {
+      this.router.navigate(['landing']);
+    }
   }
 
   async getFavourites() {

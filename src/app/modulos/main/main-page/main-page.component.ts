@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Movie, User } from 'src/app/core/Models';
 import { ApiService } from 'src/app/core/services/api.service';
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService, private toastr:ToastrService) { }
+  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService, private toastr:ToastrService, private router: Router) { }
   
   public buttonText: string ="Add to favorites";
   public filteredMovieList: Array<Movie> = [];
@@ -23,20 +24,24 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.userService.getSessionUser();
     console.log(this.user);
+    if(this.user.userName!=''){
     if (!this.flagEvent) //si flag == false 
     {
       this.loadList(); //carga comun de todas las pelis
     }
     console.log(this.movieList)
+  } else{
+    this.router.navigate(['landing']);
+  }
   }
   addFavourite(idPeli: string) {
     this.apiService.setFavourite(this.user.id, idPeli).subscribe({
       next: (response) => {
         if (response) {
-          this.toastr.success("Movie added to favorite.", "OK!")
+          this.toastr.success("Movie added to favorites.", "OK!")
           //alert("Pelicula agregada");
         } else {
-          this.toastr.warning("The movie was already added to favorite.", "Alert!")
+          this.toastr.warning("The movie is already on favorite.", "Alert!")
           //alert("Pelicula ya en favoritos");
         }
       },
@@ -52,7 +57,7 @@ export class MainPageComponent implements OnInit {
         this.filteredMovieList=[...this.movieList];
       },
       error(error) { console.log(error) },
-      complete() { console.log("the movies are ready") }
+      complete() { console.log("movies correctly loaded") }
     })
   }
 

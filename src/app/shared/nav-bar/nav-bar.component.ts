@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Movie } from 'src/app/core/Models';
+import { Movie, User } from 'src/app/core/Models';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,7 +19,7 @@ export class NavBarComponent implements OnInit {
   currentRoute: string;
   showDiv: number = 0;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private toastr: ToastrService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private toastr: ToastrService, private userService: UserService) {
     this.searchForm = this.formBuilder.group({
       searchQuery: ''
     });
@@ -34,6 +35,7 @@ export class NavBarComponent implements OnInit {
   public logout() {
     //alert("sesion cerrada");
     this.toastr.success("Session closed successfully!", "GOODBYE!")
+    this.userService.setSessionUser(new User());
     this.router.navigate(["/auth/login"]);
   }
 

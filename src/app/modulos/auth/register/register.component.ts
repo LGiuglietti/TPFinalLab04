@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
     console.log(this.form.value);
 
     if (this.form.invalid) {
-      this.toastr.error("Please complete with your information", "Come on!")
+      this.toastr.error("Please complete all the fields", "Come on!!")
       //alert("formulario invalido NO cumple con todo los validators")
       return;
     }
@@ -62,16 +62,16 @@ export class RegisterComponent implements OnInit {
             console.error(error)
             if (this.user.email == '' || this.user.password == '' || this.user.userName == '') {
               //alert("todavia hay campos en blanco");
-              this.toastr.warning("Complete with your information.", "OH no again!")
+              this.toastr.warning("Complete all the fields", "OH no again!")
             } else {
-              this.toastr.warning("This email has already been registered.", "Stop there!")
+              this.toastr.warning("That email has already been registered.", "Stop there!")
               //alert("mail ya en uso");
             }
           }
         })
       }
       else{
-        this.toastr.warning("please, verify your information again.", "Attention")
+        this.toastr.warning("please, verify your information.", "Attention")
         this.message = "Passwords are not the same. Try again."
       }
     }
