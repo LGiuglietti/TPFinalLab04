@@ -28,7 +28,7 @@ export class ApiService {
     return this.checkEmailExists(user).pipe(
       switchMap((res) => {
         if (res) {
-          throw new Error('Email ya registrado');
+          throw new Error('Email already registered');
         }
         else {
           const body = {

@@ -5,6 +5,8 @@ import { Error404Component } from './shared/error404/error404.component';
 import { LandingPageComponent } from './modulos/landing/landing-page/landing-page.component';
 import { MovieListComponent } from './shared/movie-list/movie-list.component';
 import { CommentPageComponent } from './modulos/comments/comment-page/comment-page.component';
+import { AuthGuard } from './guards/auth-guards';
+import { LoginGuard } from './guards/login-guards';
 
 const routes: Routes = [
   {
@@ -18,15 +20,15 @@ const routes: Routes = [
   },
   {
     path: 'main',
-    loadChildren: () => import("./modulos/main/main.module").then(m => m.MainModule)
+    loadChildren: () => import("./modulos/main/main.module").then(m => m.MainModule) // , canActivate: [LoginGuard]
   },
   {
     path: 'favourite',
-    loadChildren: () => import("./modulos/favourites/favourites.module").then(m => m.FavouritesModule)
+    loadChildren: () => import("./modulos/favourites/favourites.module").then(m => m.FavouritesModule) // , canActivate: [AuthGuard]
   },
   {
     path: 'comments',
-    component: CommentPageComponent
+    component: CommentPageComponent //, canActivate: [AuthGuard]
   },
   {
     path: '', 
@@ -35,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    component: MovieListComponent
+    component: MovieListComponent //, canActivate: [AuthGuard]
   },
   {
     path: '**',

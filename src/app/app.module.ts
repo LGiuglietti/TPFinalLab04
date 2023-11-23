@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import "node_modules/bootstrap"
 import { CommentsModule } from './modulos/comments/comments.module';
 //import { MovieListComponent } from './shared/movie-list/movie-list.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { CommentsModule } from './modulos/comments/comments.module';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

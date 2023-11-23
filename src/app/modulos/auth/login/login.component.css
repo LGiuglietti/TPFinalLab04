@@ -1,3 +1,11 @@
+.login-container{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .container{
     max-width: 500px;
 }
@@ -19,4 +27,14 @@
 
 .mb-3{
     margin-top: 20px;
+}
+
+.wrongway-container{
+    position: sticky;
+    bottom: 0;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
