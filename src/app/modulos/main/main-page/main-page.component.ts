@@ -12,9 +12,9 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService, private toastr:ToastrService, private router: Router) { }
-  
-  public buttonText: string ="Add to favorites";
+  constructor(private userService: UserService, private movieService: MoviesService, private apiService: ApiService, private toastr: ToastrService, private router: Router) { }
+
+  public buttonText: string = "Add to favorites";
   public filteredMovieList: Array<Movie> = [];
   public movieList: Array<Movie> = [];
 
@@ -24,15 +24,15 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.userService.getSessionUser();
     console.log(this.user);
-    if(this.user.userName!=''){
-    if (!this.flagEvent) //si flag == false 
-    {
-      this.loadList(); //carga comun de todas las pelis
+    if (this.user.userName != '') {
+      if (!this.flagEvent) //si flag == false 
+      {
+        this.loadList(); //carga comun de todas las pelis
+      }
+      console.log(this.movieList)
+    } else {
+      this.router.navigate(['landing']);
     }
-    console.log(this.movieList)
-  } else{
-    this.router.navigate(['landing']);
-  }
   }
   addFavourite(idPeli: string) {
     this.apiService.setFavourite(this.user.id, idPeli).subscribe({
@@ -51,10 +51,10 @@ export class MainPageComponent implements OnInit {
     })
   }
   loadList() {
-     this.movieService.getAllObservable().subscribe({
+    this.movieService.getAllObservable().subscribe({
       next: (response) => {
         this.movieList = response as Movie[];
-        this.filteredMovieList=[...this.movieList];
+        this.filteredMovieList = [...this.movieList];
       },
       error(error) { console.log(error) },
       complete() { console.log("movies correctly loaded") }
@@ -62,7 +62,7 @@ export class MainPageComponent implements OnInit {
   }
 
   filterList(formQuery: string) { //al dispararse el evento se filtra la lista
-     if (formQuery !== '') {
+    if (formQuery !== '') {
       this.flagEvent = true;
       this.filteredMovieList = this.movieList.filter(movie => movie.title.includes(formQuery));
     } else {

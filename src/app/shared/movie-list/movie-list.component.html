@@ -1,5 +1,5 @@
-<div class="container" style="background-color: rgb(91, 88, 88); min-width: 85%; min-height: 100vh;">
-    <div class="row p-2 bg-dark bg-opacity-50 m-auto movie-list">
+<div class="container" style="background-color: rgb(91, 88, 88); min-width: 100%; min-height: 100vh;">
+    <div class="row p-2 bg-dark bg-opacity-50 m-auto movie-list" style="border-radius: 0px 0px 10px 10px;">
         <div class=" bg-light div-card" *ngFor="let movie of movieList">
             <img class="card-img-top p-2" src="{{ movie.image }}" alt="Card image cap"(click)="commentClick(movie)">
             <div class="card-body">

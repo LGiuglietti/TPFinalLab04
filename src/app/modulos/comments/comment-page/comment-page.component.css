@@ -1,19 +1,19 @@
 .container {
-    width: 100%;
-    height: 92.3vh;
+    min-width: 100%;
+    height: 90vh;
     display: flex;
     background-color: grey;
 }
 .imageContainer{
     margin: 15px 10% 15px 15px;
     object-fit: contain; 
-    
 }
 
 .image {
     width: 120%;
     height: calc(100vh - 12vh);
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
+    margin-left: 20px;
 }
 
 .comment {
@@ -24,8 +24,8 @@
     overflow-y: scroll;
     height: 90%;
     width: 100%;
-    margin-left: 5vh;
-    margin-top: 1vh;
+    margin-left: 15vh;
+    margin-top: 1.5vh;
 
 }
 .newComment{
@@ -36,7 +36,7 @@
     padding: 5px 0px 5px 0px;
     background-color: lightgray;
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 2vh;
     width: 100%;
-    margin-left: 5vh;
+    margin-left: 15vh;
 }
